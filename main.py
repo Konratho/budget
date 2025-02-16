@@ -1,26 +1,15 @@
-import tkinter as tk
-import pandas as pd
-from app import *
-
+from BudgetApp import *
+from utils import *
 
 def main() -> None:
     
-    try:
-        df = pd.read_csv('./expenses.csv')
-    except Exception as e:
-        data = {
-            "Date": [],
-            "Description":  [],
-            "Amount": [],
-            "Type": []
-        }
-        df = pd.DataFrame(data)
+    # Collect earlier saved data
+    collectData('.\history.csv')
 
-
+    # Start tkinter
     root = tk.Tk()
     app = BudgetApp(root)
-    root.mainloop
-    print("hey")
+    root.mainloop()
 
 if __name__ == "__main__":
     main()
