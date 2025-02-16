@@ -1,14 +1,17 @@
-from BudgetApp import *
+from budget_app import *
 from utils import *
 
+filepath: str = ".\\history.csv" 
+print("You're using the filepath:", filepath)
+
+
 def main() -> None:
-    
     # Collect earlier saved data
-    collectData('.\history.csv')
+    df = collectData(filepath)
 
     # Start tkinter
     root = tk.Tk()
-    app = BudgetApp(root)
+    BudgetApp(root, df, filepath)
     root.mainloop()
 
 if __name__ == "__main__":
