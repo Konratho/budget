@@ -91,7 +91,7 @@ class BudgetApp(tk.Frame):
 
         # pandas.DataFrame.iterrows() yields index and row data
         for index, row in self.df.iterrows():
-            text.insert(tk.END, f"Date: {row['Date']} | Description: {row['Description']} | Amount: {row['Amount']} | Type: {row['Type']} \n")
+            text.insert(tk.END, f"Date: {row['Date']} | Description: {row['Description']} | Amount: {row['Amount']} NOK | Type: {row['Type']} \n")
         
             edit_button = tk.Button(self.top, text="Edit", command= lambda i = index: self.edit_entry(i))
             delete_button = tk.Button(self.top, text="Delete", command= lambda i = index: self.delete_entry(i))
